@@ -27,9 +27,9 @@ const Navbar = () => {
           {/* User Menu */}
           {isAuthenticated && (
             <div className="flex items-center space-x-2 md:space-x-4">
-              <div className="hidden sm:flex items-center space-x-2 text-white">
+              <div className="flex items-center space-x-2 text-white">
                 <FaUser className="text-sm" />
-                <span className="font-medium text-sm md:text-base">
+                <span className="font-medium text-sm md:text-base truncate max-w-[120px] md:max-w-none">
                   {user?.name}
                 </span>
               </div>
