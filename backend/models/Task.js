@@ -37,14 +37,12 @@ const taskSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // Automatically adds createdAt and updatedAt
+    timestamps: true, 
   },
 );
 
-// Index for faster queries by userId
 taskSchema.index({ userId: 1 });
 
-// Index for filtering by status and priority
 taskSchema.index({ status: 1, priority: 1 });
 
 const Task = mongoose.model("Task", taskSchema);
