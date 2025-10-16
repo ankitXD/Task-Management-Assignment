@@ -60,16 +60,16 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
-      <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-8">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4 py-8">
+      <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-6 sm:p-8">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800">Welcome Back</h2>
-          <p className="text-gray-600 mt-2">Login to manage your tasks</p>
+        <div className="text-center mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Welcome Back</h2>
+          <p className="text-gray-600 mt-2 text-sm sm:text-base">Login to manage your tasks</p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
           {/* Email Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -84,7 +84,7 @@ const Login = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
+                className={`w-full pl-10 pr-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
                   errors.email ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="you@example.com"
@@ -109,7 +109,7 @@ const Login = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
+                className={`w-full pl-10 pr-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
                   errors.password ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="••••••••"
@@ -124,7 +124,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-blue-600 text-white py-2.5 sm:py-3 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? (
               <>
@@ -138,7 +138,7 @@ const Login = () => {
         </form>
 
         {/* Register Link */}
-        <p className="text-center text-gray-600 mt-6">
+        <p className="text-center text-gray-600 mt-4 sm:mt-6 text-sm sm:text-base">
           Don't have an account?{" "}
           <Link
             to="/register"
