@@ -51,14 +51,14 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
         <div className="flex space-x-1 flex-shrink-0">
           <button
             onClick={() => onEdit(task)}
-            className="text-blue-600 hover:text-blue-800 transition p-1 md:p-1.5 hover:bg-blue-50 rounded"
+            className="text-blue-600 hover:text-blue-800 transition p-1 md:p-1.5 hover:bg-blue-50 rounded cursor-pointer"
             title="Edit task"
           >
             <FaEdit size={14} className="md:w-4 md:h-4" />
           </button>
           <button
             onClick={() => onDelete(task._id)}
-            className="text-red-600 hover:text-red-800 transition p-1 md:p-1.5 hover:bg-red-50 rounded"
+            className="text-red-600 hover:text-red-800 transition p-1 md:p-1.5 hover:bg-red-50 rounded cursor-pointer"
             title="Delete task"
           >
             <FaTrash size={14} className="md:w-4 md:h-4" />

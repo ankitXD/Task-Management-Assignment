@@ -180,7 +180,7 @@ const Dashboard = () => {
           </h1>
           <button
             onClick={handleCreateTask}
-            className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg hover:bg-blue-700 transition font-medium shadow-md hover:shadow-lg text-sm md:text-base"
+            className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg hover:bg-blue-700 transition font-medium shadow-md hover:shadow-lg text-sm md:text-base cursor-pointer"
           >
             <FaPlus className="text-sm" />
             <span>Create Task</span>

@@ -73,7 +73,7 @@ const TaskFilters = ({ filters, onFilterChange, onClearFilters }) => {
         <div className="mt-3 flex justify-center sm:justify-end">
           <button
             onClick={onClearFilters}
-            className="flex items-center space-x-1.5 text-xs md:text-sm text-gray-600 hover:text-gray-800 transition px-3 py-1.5 hover:bg-gray-50 rounded-lg"
+            className="flex items-center space-x-1.5 text-xs md:text-sm text-gray-600 hover:text-gray-800 transition px-3 py-1.5 hover:bg-gray-50 rounded-lg cursor-pointer"
           >
             <FaTimes className="text-xs" />
             <span>Clear Filters</span>

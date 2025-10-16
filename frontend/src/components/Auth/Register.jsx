@@ -81,8 +81,12 @@ const Register = () => {
       <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-6 sm:p-8">
         {/* Header */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Create Account</h2>
-          <p className="text-gray-600 mt-2 text-sm sm:text-base">Sign up to start managing tasks</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            Create Account
+          </h2>
+          <p className="text-gray-600 mt-2 text-sm sm:text-base">
+            Sign up to start managing tasks
+          </p>
         </div>
 
         {/* Form */}
@@ -193,7 +197,7 @@ const Register = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white py-2.5 sm:py-3 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-blue-600 text-white py-2.5 sm:py-3 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             {loading ? (
               <>

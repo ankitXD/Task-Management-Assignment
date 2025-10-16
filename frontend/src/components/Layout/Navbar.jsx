@@ -37,7 +37,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-1 md:space-x-1.5 bg-white text-blue-600 px-2.5 py-1.5 md:px-3 md:py-2 rounded-lg hover:bg-blue-50 transition font-medium text-xs md:text-sm"
+                className="flex items-center space-x-1 md:space-x-1.5 bg-white text-blue-600 px-2.5 py-1.5 md:px-3 md:py-2 rounded-lg hover:bg-blue-50 transition font-medium text-xs md:text-sm cursor-pointer"
               >
                 <FaSignOutAlt className="text-xs" />
                 <span className="hidden sm:inline">Logout</span>
