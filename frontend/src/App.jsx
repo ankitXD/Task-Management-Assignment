@@ -37,6 +37,9 @@ const App = () => {
           draggable
           pauseOnHover
           theme="light"
+          className="!text-sm !p-2 sm:!text-base sm:!p-4"
+          toastClassName="!text-sm !p-3 sm:!text-base sm:!p-4 !rounded-lg"
+          bodyClassName="!text-sm sm:!text-base"
         />
       </div>
     </AuthProvider>

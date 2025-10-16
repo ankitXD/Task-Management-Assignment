@@ -42,37 +42,39 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-200">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 md:p-6 border border-gray-200">
       {/* Header */}
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-semibold text-gray-800 flex-1 pr-4">
+      <div className="flex justify-between items-start mb-3 md:mb-4">
+        <h3 className="text-lg md:text-xl font-semibold text-gray-800 flex-1 pr-2 md:pr-4 break-words">
           {task.title}
         </h3>
-        <div className="flex space-x-2">
+        <div className="flex space-x-1 md:space-x-2 flex-shrink-0">
           <button
             onClick={() => onEdit(task)}
-            className="text-blue-600 hover:text-blue-800 transition p-2"
+            className="text-blue-600 hover:text-blue-800 transition p-1.5 md:p-2 hover:bg-blue-50 rounded"
             title="Edit task"
           >
-            <FaEdit size={18} />
+            <FaEdit size={16} className="md:w-[18px] md:h-[18px]" />
           </button>
           <button
             onClick={() => onDelete(task._id)}
-            className="text-red-600 hover:text-red-800 transition p-2"
+            className="text-red-600 hover:text-red-800 transition p-1.5 md:p-2 hover:bg-red-50 rounded"
             title="Delete task"
           >
-            <FaTrash size={18} />
+            <FaTrash size={16} className="md:w-[18px] md:h-[18px]" />
           </button>
         </div>
       </div>
 
       {/* Description */}
       {task.description && (
-        <p className="text-gray-600 mb-4 line-clamp-2">{task.description}</p>
+        <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4 line-clamp-2 break-words">
+          {task.description}
+        </p>
       )}
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-3 md:mb-4">
         <span
           className={`px-3 py-1 rounded-full text-xs font-medium border ${getPriorityColor(
             task.priority
@@ -102,18 +104,19 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
       </div>
 
       {/* Due Date */}
-      <div className="flex items-center text-sm">
+      <div className="flex items-center text-xs md:text-sm">
         <FaClock
-          className={`mr-2 ${
+          className={`mr-1.5 md:mr-2 flex-shrink-0 ${
             isOverdue(task.dueDate) ? "text-red-500" : "text-gray-400"
           }`}
+          size={12}
         />
         <span
-          className={
+          className={`${
             isOverdue(task.dueDate)
               ? "text-red-500 font-medium"
               : "text-gray-600"
-          }
+          } break-words`}
         >
           {formatDate(task.dueDate)}
           {isOverdue(task.dueDate) && " (Overdue)"}

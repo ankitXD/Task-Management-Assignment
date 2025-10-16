@@ -14,29 +14,31 @@ const Navbar = () => {
   return (
     <nav className="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo/Brand */}
           <Link
             to="/"
             className="flex items-center space-x-2 text-white hover:text-blue-100 transition"
           >
-            <FaTasks className="text-2xl" />
-            <span className="text-xl font-bold">TaskManager</span>
+            <FaTasks className="text-xl md:text-2xl" />
+            <span className="text-lg md:text-xl font-bold">TaskManager</span>
           </Link>
 
           {/* User Menu */}
           {isAuthenticated && (
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-white">
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <div className="hidden sm:flex items-center space-x-2 text-white">
                 <FaUser className="text-sm" />
-                <span className="font-medium">{user?.name}</span>
+                <span className="font-medium text-sm md:text-base">
+                  {user?.name}
+                </span>
               </div>
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-2 bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition font-medium"
+                className="flex items-center space-x-1 md:space-x-2 bg-white text-blue-600 px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-blue-50 transition font-medium text-sm md:text-base"
               >
                 <FaSignOutAlt />
-                <span>Logout</span>
+                <span className="hidden sm:inline">Logout</span>
               </button>
             </div>
           )}
