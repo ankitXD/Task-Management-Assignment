@@ -41,7 +41,7 @@ CORS_ORIGIN=http://localhost:5173
 npm start
 ```
 
-Backend will run on `http://localhost:5000`
+Backend will run on `http://localhost:8000`
 
 ### Frontend Setup
 
@@ -60,7 +60,7 @@ npm install
 3. Create `.env` file in the frontend directory:
 
 ```env
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=http://localhost:8000
 ```
 
 4. Start the frontend development server:
