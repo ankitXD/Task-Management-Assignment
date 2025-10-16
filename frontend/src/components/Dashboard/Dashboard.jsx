@@ -106,65 +106,65 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Stats Cards */}
       <div className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-4 md:py-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="container mx-auto px-3 md:px-4 py-3 md:py-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-3">
             {/* Total Tasks */}
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-4 md:p-6 text-white">
+            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-3 md:p-4 text-white">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-blue-100 text-xs md:text-sm font-medium">
+                  <p className="text-blue-100 text-[10px] md:text-xs font-medium">
                     Total Tasks
                   </p>
-                  <p className="text-2xl md:text-3xl font-bold mt-1 md:mt-2">
+                  <p className="text-xl md:text-2xl font-bold mt-0.5 md:mt-1">
                     {stats?.total || 0}
                   </p>
                 </div>
-                <FaTasks className="text-2xl md:text-4xl text-blue-200" />
+                <FaTasks className="text-xl md:text-3xl text-blue-200" />
               </div>
             </div>
 
             {/* Todo */}
-            <div className="bg-gradient-to-br from-gray-500 to-gray-600 rounded-lg p-4 md:p-6 text-white">
+            <div className="bg-gradient-to-br from-gray-500 to-gray-600 rounded-lg p-3 md:p-4 text-white">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-gray-100 text-xs md:text-sm font-medium">
+                  <p className="text-gray-100 text-[10px] md:text-xs font-medium">
                     Todo
                   </p>
-                  <p className="text-2xl md:text-3xl font-bold mt-1 md:mt-2">
+                  <p className="text-xl md:text-2xl font-bold mt-0.5 md:mt-1">
                     {stats?.todo || 0}
                   </p>
                 </div>
-                <FaExclamationCircle className="text-2xl md:text-4xl text-gray-200" />
+                <FaExclamationCircle className="text-xl md:text-3xl text-gray-200" />
               </div>
             </div>
 
             {/* In Progress */}
-            <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg p-4 md:p-6 text-white">
+            <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg p-3 md:p-4 text-white">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-yellow-100 text-xs md:text-sm font-medium">
+                  <p className="text-yellow-100 text-[10px] md:text-xs font-medium">
                     In Progress
                   </p>
-                  <p className="text-2xl md:text-3xl font-bold mt-1 md:mt-2">
+                  <p className="text-xl md:text-2xl font-bold mt-0.5 md:mt-1">
                     {stats?.inProgress || 0}
                   </p>
                 </div>
-                <FaClock className="text-2xl md:text-4xl text-yellow-200" />
+                <FaClock className="text-xl md:text-3xl text-yellow-200" />
               </div>
             </div>
 
             {/* Completed */}
-            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-4 md:p-6 text-white">
+            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-3 md:p-4 text-white">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-green-100 text-xs md:text-sm font-medium">
+                  <p className="text-green-100 text-[10px] md:text-xs font-medium">
                     Completed
                   </p>
-                  <p className="text-2xl md:text-3xl font-bold mt-1 md:mt-2">
+                  <p className="text-xl md:text-2xl font-bold mt-0.5 md:mt-1">
                     {stats?.completed || 0}
                   </p>
                 </div>
-                <FaCheckCircle className="text-2xl md:text-4xl text-green-200" />
+                <FaCheckCircle className="text-xl md:text-3xl text-green-200" />
               </div>
             </div>
           </div>
@@ -172,17 +172,17 @@ const Dashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-4 md:py-8">
+      <div className="container mx-auto px-3 md:px-4 py-3 md:py-6">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 md:mb-5">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
             My Tasks
           </h1>
           <button
             onClick={handleCreateTask}
-            className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg hover:bg-blue-700 transition font-medium shadow-md hover:shadow-lg"
+            className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg hover:bg-blue-700 transition font-medium shadow-md hover:shadow-lg text-sm md:text-base"
           >
-            <FaPlus />
+            <FaPlus className="text-sm" />
             <span>Create Task</span>
           </button>
         </div>
