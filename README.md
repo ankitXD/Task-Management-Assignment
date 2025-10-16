@@ -27,7 +27,7 @@ npm install
 3. Create `.env` file in the backend directory:
 
 ```env
-PORT=5000
+PORT=8000
 MONGODB_URI=mongodb://localhost:27017/task-management
 JWT_SECRET=your_super_secret_jwt_key_here_min_32_chars
 JWT_EXPIRES_IN=7d
