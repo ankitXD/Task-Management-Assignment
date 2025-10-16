@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
-      <div className="container mx-auto px-3 md:px-4">
+      <div className="container mx-auto max-w-7xl px-3 md:px-4">
         <div className="flex justify-between items-center py-2.5 md:py-3">
           {/* Logo/Brand */}
           <Link
@@ -21,7 +21,9 @@ const Navbar = () => {
             className="flex items-center space-x-1.5 md:space-x-2 text-white hover:text-blue-100 transition"
           >
             <FaTasks className="text-lg md:text-xl" />
-            <span className="text-base md:text-lg font-bold">TaskManager</span>
+            <span className="text-base md:text-lg font-bold">
+              Task Management System
+            </span>
           </Link>
 
           {/* User Menu */}

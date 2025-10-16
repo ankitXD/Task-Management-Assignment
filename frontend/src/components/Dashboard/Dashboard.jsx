@@ -106,7 +106,7 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Stats Cards */}
       <div className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-3 md:px-4 py-3 md:py-5">
+        <div className="container mx-auto max-w-7xl px-3 md:px-4 py-3 md:py-5">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-3">
             {/* Total Tasks */}
             <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-3 md:p-4 text-white">
@@ -172,7 +172,7 @@ const Dashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-3 md:px-4 py-3 md:py-6">
+      <div className="container mx-auto max-w-7xl px-3 md:px-4 py-3 md:py-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 md:mb-5">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
