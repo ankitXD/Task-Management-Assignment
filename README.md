@@ -8,11 +8,10 @@ A full-stack task management application built with the MERN stack (MongoDB, Exp
 
 ## Installation and Usage
 
-### Prerequisites
+### Cloning
 
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas)
-- npm or yarn
+1. Clone the repository: https://github.com/ankitXD/Task-Management-Assignment.git
+2. Navigate to the project directory: cd Task-Management-Assignment
 
 ### Backend Setup
 
