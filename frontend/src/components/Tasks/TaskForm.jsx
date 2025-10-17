@@ -80,10 +80,10 @@ const TaskForm = ({ task, onClose, onTaskSaved }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 overflow-y-auto">
-      <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full my-4 md:my-8">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="flex justify-between items-center p-4 md:p-6 border-b sticky top-0 bg-white rounded-t-xl z-10">
+        <div className="flex justify-between items-center p-4 md:p-6 border-b bg-white flex-shrink-0">
           <h2 className="text-xl md:text-2xl font-bold text-gray-800">
             {task ? "Edit Task" : "Create New Task"}
           </h2>
@@ -98,7 +98,7 @@ const TaskForm = ({ task, onClose, onTaskSaved }) => {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="p-4 md:p-6 space-y-4 max-h-[calc(90vh-8rem)] overflow-y-auto"
+          className="p-4 md:p-6 space-y-4 overflow-y-auto flex-1"
         >
           {/* Title */}
           <div>
@@ -188,7 +188,7 @@ const TaskForm = ({ task, onClose, onTaskSaved }) => {
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-4 sticky bottom-0 bg-white pb-4 -mb-4">
+          <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-4 border-t bg-white mt-4 -mx-4 md:-mx-6 px-4 md:px-6 pb-4 flex-shrink-0">
             <button
               type="button"
               onClick={onClose}
