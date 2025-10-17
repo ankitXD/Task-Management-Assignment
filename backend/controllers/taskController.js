@@ -82,6 +82,20 @@ export const createTask = async (req, res, next) => {
 
     const { title, description, priority, status, dueDate } = value;
 
+    // Check if due date is in the past
+    if (dueDate) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const selectedDate = new Date(dueDate);
+      selectedDate.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        const error = new Error("Due date cannot be in the past");
+        error.statusCode = 400;
+        return next(error);
+      }
+    }
+
     const task = await Task.create({
       title,
       description,
@@ -127,6 +141,20 @@ export const updateTask = async (req, res, next) => {
       const error = new Error("Not authorized to update this task");
       error.statusCode = 403;
       return next(error);
+    }
+
+    // Check if due date is in the past (only if dueDate is being updated)
+    if (value.dueDate) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const selectedDate = new Date(value.dueDate);
+      selectedDate.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        const error = new Error("Due date cannot be in the past");
+        error.statusCode = 400;
+        return next(error);
+      }
     }
 
     task = await Task.findByIdAndUpdate(req.params.id, value, {

@@ -38,7 +38,17 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
 
   const isOverdue = (dueDate) => {
     if (!dueDate) return false;
-    return new Date(dueDate) < new Date() && task.status !== "Completed";
+
+    // Get today's date at midnight
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Get due date at midnight
+    const due = new Date(dueDate);
+    due.setHours(0, 0, 0, 0);
+
+    // Task is overdue if due date is before today and not completed
+    return due < today && task.status !== "Completed";
   };
 
   return (
