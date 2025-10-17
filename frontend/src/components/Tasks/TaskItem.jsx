@@ -67,7 +67,7 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
             <FaEdit size={14} className="md:w-4 md:h-4" />
           </button>
           <button
-            onClick={() => onDelete(task._id)}
+            onClick={() => onDelete(task)}
             className="text-red-600 hover:text-red-800 transition p-1 md:p-1.5 hover:bg-red-50 rounded cursor-pointer"
             title="Delete task"
           >

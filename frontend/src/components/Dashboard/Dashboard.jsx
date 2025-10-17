@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import TaskFilters from "../Tasks/TaskFilters";
 import TaskList from "../Tasks/TaskList";
 import TaskForm from "../Tasks/TaskForm";
+import DeleteConfirmModal from "../Tasks/DeleteConfirmModal";
 import {
   FaPlus,
   FaTasks,
@@ -18,6 +19,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [showTaskForm, setShowTaskForm] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
+  const [deletingTask, setDeletingTask] = useState(null);
   const [filters, setFilters] = useState({
     search: "",
     status: "",
@@ -55,19 +57,25 @@ const Dashboard = () => {
     }
   };
 
-  const handleDeleteTask = async (taskId) => {
-    if (!window.confirm("Are you sure you want to delete this task?")) {
-      return;
-    }
+  const handleDeleteTask = (task) => {
+    setDeletingTask(task);
+  };
 
+  const confirmDelete = async () => {
     try {
-      await taskAPI.deleteTask(taskId);
+      await taskAPI.deleteTask(deletingTask._id);
       toast.success("Task deleted successfully!");
+      setDeletingTask(null);
       fetchTasks();
       fetchStats();
     } catch (error) {
       toast.error("Failed to delete task");
+      setDeletingTask(null);
     }
+  };
+
+  const cancelDelete = () => {
+    setDeletingTask(null);
   };
 
   const handleEditTask = (task) => {
@@ -209,6 +217,15 @@ const Dashboard = () => {
           task={editingTask}
           onClose={handleCloseForm}
           onTaskSaved={handleTaskSaved}
+        />
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {deletingTask && (
+        <DeleteConfirmModal
+          taskTitle={deletingTask.title}
+          onConfirm={confirmDelete}
+          onCancel={cancelDelete}
         />
       )}
     </div>
