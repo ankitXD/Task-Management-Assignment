@@ -2,6 +2,10 @@
 
 A full-stack task management application built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring user authentication, CRUD operations, filtering, and statistics dashboard.
 
+<p align="center">
+  <img src="./frontend/public/HeadImage.png" alt="Task Management System" width="1000" />
+</p>
+
 ## Installation and Usage
 
 ### Prerequisites
